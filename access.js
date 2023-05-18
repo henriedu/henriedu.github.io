@@ -7,7 +7,7 @@ ACCESS.JS - main script used for:
 */
 let usersDatabase = [];
 if (getUDb() == null) {
-    localStorage.setItem(`usersDatabase`, JSON.stringify(usersDatabase));
+    localStorage.setItem(`uesersDatabase`, JSON.stringify(usersDatabase));
 } else {
     usersDatabase = JSON.parse(localStorage.getItem(`usersDatabase`));
 }
