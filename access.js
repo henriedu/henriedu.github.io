@@ -16,6 +16,7 @@ let currentUserId = usersDatabase.length + 1;
 if (getUDb() !== null) {
     addUserIDInc();
 }
+// if usersDatabase is blank, force logout, needs manual page refresh
 if (getUDb() == null || getUDb().length <= 0) {
     userLogin(null);
     setLoggedIn(0);
