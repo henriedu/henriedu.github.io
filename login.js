@@ -4,6 +4,13 @@ const passwordInputLogin = document.querySelector(`#passwordLogin`);
 const btnLogin = document.querySelector(`#btnLogin`);
 
 $(document).ready(function() {
+    // check if currently logged in
+    if (isLoggedIn()) {
+        alert(`You are already logged in! To login another account, logout first!`);
+        window.location.href = `myaccount.html`;
+        return;
+    }
+    //
     const usernameLogin = $(`#usernameLogin`);
     const passwordLogin = $(`#passwordLogin`);
     usernameLogin.focus();
@@ -11,12 +18,7 @@ $(document).ready(function() {
         const usernameLoginVal = usernameLogin.val();
         const passwordLoginVal = passwordLogin.val();
         let userPending = getUserByUsername(usernameLoginVal);
-        // validation
-        if (isLoggedIn()) {
-            alert(`You are already logged in! To login another account, logout first!`);
-            window.location.href = `myaccount.html`;
-            return;
-        }
+        // validation        
         // if any of the username and password is invalid
         if (!validateInput(usernameLogin) || !validateInput(passwordLogin)) {
             return;

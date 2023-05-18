@@ -7,6 +7,13 @@ usernameInput.focus();
 
 // SIGNUP / REGISTER
 $(document).ready(function() {
+    // check if currently logged in
+    if (isLoggedIn()) {
+        alert(`You are already logged in! To signup for another account, logout first!`);
+        window.location.href = `myaccount.html`;
+        return;
+    }
+    //
     const username = $(`#usernameSignup`);
     const password = $(`#passwordSignup`);
     const passwordAgain = $(`#passwordAgainSignup`);
