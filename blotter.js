@@ -117,7 +117,7 @@ $(document).ready(function() {
         const newTransaction = new transactionInstance();
         newTransaction.datetime = createDateNowYMDHM();
         newTransaction.type = `Blotter Report`;
-        newTransaction.details = `Generated a report (Report ID: ${padThisNum(blotterCurrentID, 5)}).`;
+        newTransaction.details = `Generated a report (Report ID: ${padThisNum(newReport.reportID, 5)}).`;
         newTransaction.userid = transactingUserid;
         addTransaction(newTransaction);
 
