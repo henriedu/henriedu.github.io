@@ -27,7 +27,7 @@ class user {
     lastname = null;
     firstname = null;
     registrationDate = null;
-    deleted = false;
+    deleted = false; // makes use of deleted property to disallow use and new accounts with that username
     
     constructor() {
         this.userid = addUserIDInc();

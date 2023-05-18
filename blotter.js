@@ -1,12 +1,13 @@
 // database mimic, initialize
 let blotterDatabase = [];
-let blotterCurrentID = 0; // the value for new report id, always length of blotterDatabase + 1 so that if last value is 5, this becomes 6
-if (getBlotterDB() != null) {
+let blotterCurrentID = 0; // the value for new report id, always + 1 of the reportid of the right-most value in array so that if last value is 5, this becomes 6
+if (getBlotterDB() != null && getBlotterDB().length > 0) {
     blotterDatabase = getBlotterDB();
-    blotterCurrentID = blotterDatabase.length + 1;
+    blotterCurrentID = blotterDatabase[blotterDatabase.length - 1].reportID + 1;
 } else {
     blotterCurrentID = blotterDatabase.length + 1;
     updateBlotterDB();
+    blotterCurrentID = 1;
 }
 let thisUserBlotterDatabase = []; // array that is like blotterDatabase but only when its reporting user id matches to the currently logged in user id
 function updateCurrentUserBlotterDatabase() {
@@ -41,14 +42,27 @@ function addReportToDB(newReport) {
 }
 function getBlotterDB() {
     let forRetrieval = localStorage.getItem(`blotterDatabase`);
-    if (forRetrieval === null) {
-        return null;
+    if (forRetrieval == null) {
+        const blankArray = [];
+        return blankArray;
     }
     return JSON.parse(localStorage.getItem(`blotterDatabase`));
 }
 // updates blotterDB in localStorage key `blotterDatabase`
 function updateBlotterDB() {
+    // create a blank array
+    let blotterDatabaseUndeleted = [];
+    // for loop to remove any deleted item
+    for (let i = 0; i < blotterDatabase.length; i++) {
+        if (blotterDatabase[i].deleted == false) {
+            // undeleted item will be pushed into the previously blank array
+            blotterDatabaseUndeleted.push(blotterDatabase[i]);            
+        }
+    }
+    // reassigns the blotter database into the new blotterdatabase
+    blotterDatabase = blotterDatabaseUndeleted;
     localStorage.setItem(`blotterDatabase`, JSON.stringify(blotterDatabase));
+    blotterCurrentID = getBlotterDB()[blotterDatabase.length - 1].reportID + 1;
 }
 // function that gets the class object instance that has a certain ID and returns that
 function getReportByID(thisID) {
@@ -117,7 +131,7 @@ $(document).ready(function() {
         const newTransaction = new transactionInstance();
         newTransaction.datetime = createDateNowYMDHM();
         newTransaction.type = `Blotter Report`;
-        newTransaction.details = `Generated a report (Report ID: ${padThisNum(newReport.reportID, 5)}).`;
+        newTransaction.details = `Generated a report (Report ID: ${padThisNum(blotterCurrentID, 5)}).`;
         newTransaction.userid = transactingUserid;
         addTransaction(newTransaction);
 
@@ -279,4 +293,3 @@ $(document).ready(function() {
         updateBlotterDB();
     });
 });
-
