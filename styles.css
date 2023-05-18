@@ -1,0 +1,226 @@
+html {
+    background-color: #164F2F;
+    color: white;
+}
+*, body {
+    font-family: 'Google Sans', 'Segoe UI', 'Nunito Sans', 'Product Sans', sans-serif;
+}
+input, textarea, button {
+    border-color: black;
+    border-style: solid;
+    border-radius: 7.5px;
+    border-width: 2px;
+    margin: 5px;
+    padding: 5px;
+}
+button {
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+button:hover {
+    color: white;
+    background-color: rgb(50, 50, 50);
+}
+div, nav {
+    border-radius: 10px;
+}
+/**/
+.body-main-div {
+    text-align: center;
+    justify-content: center;
+}
+.div-homepage-wall, .homepage-wall-post {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;  
+}
+.justify-text {
+    text-align: justify;
+    width: 60%;
+}
+.homepage-wall-post {    
+    background-color: #2F5C43;
+    margin: 10px;
+    padding: 10px;
+}
+.homepage-wall-post p {
+    margin-top: 0.2em;
+    margin-bottom: 0.2em;
+    line-height: 1.5em;
+}
+.div-homepage-wall {
+    margin: 10px;
+    padding: 10px;
+    background-color: #0F3620;
+}
+.embed-fb-post {
+    color: white;
+}
+/**/
+.account-reminder a {
+    color: rgb(200, 200, 200);
+    text-decoration: underline;
+    font-weight: bold;
+}
+/**/
+.div-report {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.generate-report {
+    text-align: justify;
+    height: 100px;
+    width: 90%;
+}
+.user-report-div {
+    border-radius: 10px;
+    background-color: #1e1e1e;
+    padding: 10px;
+    margin: 10px;
+}
+.gr-label {
+    text-align: left;
+}
+.gr-label-textarea {
+    text-align: left;
+}
+.report-content-edit-textarea {
+    width: 80%;
+}
+#caution a {
+    color: white;
+}
+input#report-address {
+    width: 80%;
+}
+.user-report-div button {
+    transition: all 0.3s ease;
+    font-weight: bold;
+    width: 60px;
+}
+.report-edit:hover {
+    color: white;
+    background-color: green;
+}
+.report-delete:hover {
+    color: white;
+    background-color: red;
+}
+.report-content {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+/* My Account */
+#my-account-page {
+    margin: 10px;
+    padding: 20px;
+    background-color: #1e1e1e;
+    justify-content: center;
+}
+
+#my-account-page legend {
+    text-align: left;
+}
+.my-account-names fieldset {
+    display: inline-block;
+}
+.my-account-address fieldset {
+    width: 50%;
+}
+.my-account-names, .my-account-otherinfo {
+    justify-content: center;
+    text-align: left;
+}
+.transaction-list, .transaction-list-item {
+    text-align: left;
+}
+/**/
+#reportingas {
+    color: antiquewhite;
+}
+.btnLogout {
+    cursor: pointer;
+}
+.btnLogout:hover {
+    background-color: red;
+    color: white;
+}
+#delete:hover {
+    background-color: red;
+    color: white;
+}
+a {
+    border-radius: 5px;
+    color: white;
+    transition: all 0.3s;
+}
+a.hyperlinkCustom:hover {
+    background-color: #1e1e1e;
+}
+a.btnLogout:hover {
+    background-color: red;
+}
+.danger-zone {
+    color: red;
+    font-weight: bold;
+    -webkit-text-stroke-color: white;
+    text-decoration: underline white;
+}
+/* navbar */
+.div-nav, .nav-bar {
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+    background-color: #4F1B16;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0px;
+}
+.nav-ul {
+    list-style-type: none;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #4F1B16;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+}
+.nav-li {
+    text-align: center;
+    float: left;
+}
+.nav-li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+.nav-li a:hover {
+    background-color: #101;
+}
+.nav-li-active {
+    background-color: #111;
+}
+/* CSS properties that change placeholder text style when a certain value */
+input[placeholder="Required field"]::placeholder {
+    font-weight: bold;
+    color: red;
+}
+input[placeholder="Already exists!"]::placeholder {
+    font-weight: bold;
+    color: red;
+}
+input[placeholder="Invalid input!"]::placeholder {
+    font-weight: bold;
+    color: red;
+}
+input[placeholder="Invalid characters!"]::placeholder {
+    font-weight: bold;
+    color: red;
+}

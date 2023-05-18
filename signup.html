@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap" rel="stylesheet">
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" href="styles.css">
+        <script src="jquery-3.6.4.js"></script>
+        <title>Signup</title>
+    </head>
+    <body id="body-signup">
+        <div class="div-nav">
+            <nav class="nav-bar">
+                <ul class="nav-ul">
+                    <li class="nav-li"><a href="index.html">Homepage</a></li>
+                    <li class="nav-li"><a href="blotter.html">Blotter</a></li>
+                    <li class="nav-li"><a href="reports.html">Reports</a></li>
+                    <li class="nav-li nav-li-active"><a href="myaccount.html">My Account</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="body-main-div">
+            <div class="account-card" id="div-signup">
+                <h1>Signup</h1>
+                <form class="account-form" id="signup-form" name="signupCard">
+                    <div class="account-form-field">
+                        <label for="usernameSignup" class="account-form-content">Enter username: </label>
+                        <input name="username" id="usernameSignup" class="account-form-content account-form-input" type="text" title="Enter username" placeholder="Pick a username" required>
+                    </div>
+                    <div class="account-form-field">
+                        <label for="passwordSignup" class="account-form-content">Enter password: </label>
+                        <input name="password" id="passwordSignup" class="account-form-content account-form-input" type="password" title="Enter password" placeholder="*****" required>
+                    </div>
+                    <div class="account-form-field">
+                        <label for="passwordAgainSignup" class="account-form-content">Confirm password: </label>
+                        <input name="passwordAgain" id="passwordAgainSignup" class="account-form-content account-form-input" type="password" title="Confirm password" placeholder="*****" required>
+                    </div>
+                    <button name="signup" id="btnSignup" type="button" title="Signup">SIGNUP</button>
+                </form>
+                <div class="account-reminder">
+                    <p><span>Already have an account?</span> <a href="login.html">Login!</a></p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- SCRIPT -->
+        <script src="script.js"></script>
+        <script src="access.js"></script>
+        <script src="signup.js"></script>
+    </body>
+</html>

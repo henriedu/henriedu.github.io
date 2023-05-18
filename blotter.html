@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap" rel="stylesheet">
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" href="styles.css">
+        <script src="jquery-3.6.4.js"></script>
+        <title>Report System</title>
+    </head>
+    <body id="body-blotter">
+        <div class="div-nav">
+            <nav class="nav-bar">
+                <ul class="nav-ul">
+                    <li class="nav-li"><a href="index.html">Homepage</a></li>
+                    <li class="nav-li nav-li-active"><a href="blotter.html">Blotter</a></li>
+                    <li class="nav-li"><a href="reports.html">Reports</a></li>
+                    <li class="nav-li"><a href="myaccount.html">My Account</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="body-main-div">
+            <div class="div-report">
+                <form name="generatereport" class="gr-form">
+                    <h1>Generate Report</h1>
+                    <p>Reporting as <span id="reportingas"></span>. Not you? <a href="" class="hyperlinkCustom btnLogout">Logout!</a></p>
+                    <hr>
+                    <label for="report-complainee" class="gr-label">Who are you reporting?</label>
+                    <input id="report-complainee" name="report-complainee" type="text" title="Complainee" placeholder="Insert name here...">
+                    <br>
+                    <label for="report-date" class="gr-label">Date: </label>
+                    <input id="report-date" name="report-date" type="date" title="Date">
+                    <br>
+                    <label for="report-address" class="gr-label">Address: </label>
+                    <input id="report-address" name="report-address" type="text" title="Address" placeholder="Insert location here...">
+                    <br>
+                    <label for="gr-textarea" class="gr-label gr-label-textarea">Details: </label>
+                    <br>
+                    <textarea id="gr-textarea" name="details" class="generate-report" id="textarea-report" title="Report Content" placeholder="Insert details here..."></textarea>
+                    <br>
+                    <button id="gr-submit" type="button" title="Submit report">Submit</button>
+                </form>
+                <p id="caution">This report is tied to your account and you will be able to edit and delete your reports. Reports will be publicly visible in the '<a class="hyperlinkCustom" href="reports.html">Reports</a>' page but the identity of who made the report is not shown.</p>
+            </div>
+            <hr>
+            <div id="crud-reports">
+                <h2>Manage Your Reports</h2>
+                <div id="user-reports">
+
+                </div>
+            </div>
+        </div>
+        
+        <!-- SCRIPT -->
+        <script src="script.js"></script>
+        <script src="access.js"></script>
+        <script src="blotter.js"></script>
+    </body>
+</html>

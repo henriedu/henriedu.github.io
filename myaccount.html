@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap" rel="stylesheet">
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" href="styles.css">
+        <script src="jquery-3.6.4.js"></script>
+        <title>My Account</title>
+    </head>
+    <body id="body-signup">
+        <div class="div-nav">
+            <nav class="nav-bar">
+                <ul class="nav-ul">
+                    <li class="nav-li"><a href="index.html">Homepage</a></li>
+                    <li class="nav-li"><a href="blotter.html">Blotter</a></li>
+                    <li class="nav-li"><a href="reports.html">Reports</a></li>
+                    <li class="nav-li nav-li-active"><a href="myaccount.html">My Account</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="body-main-div" id="myaccount-mainbodydiv">
+            <div id="my-account-page">
+                <h1 id="my-account-name" title="Name"></h1>
+                <h2 id="my-account-username" title="Username"></h2>
+                <h3 id="my-account-userid" title="User ID"></h3>
+                <hr/>
+                <div class="my-account-names">
+                    <p id="my-account-lastname"><b>Last Name: </b><span class="my-account-content"></span></p>
+                    <p id="my-account-firstname"><b>First Name: </b><span class="my-account-content"></span></p>
+                </div>
+                <div class="my-account-otherinfo">
+                    <p id="my-account-address"><b>Address: </b><span class="my-account-content"></span></p>
+                    <p id="my-account-age"><b>Age: </b><span class="my-account-content">__</span> years</p>
+                    <p id="my-account-birthdate"><b>Date of Birth: </b><span class="my-account-content-date"></span></p>
+                    <p id="my-account-regdate"><b>Date of Account Registration: </b><span class="my-account-content-uneditable"></span></p>
+                </div>
+                <div id="my-account-change-password"></div>
+                <br>
+                <div>
+                    <button id="btnEditProfile" type="button" title="Edit profile">Edit</button>
+                    <button id="btnSaveProfile" type="button" title="Save profile" disabled>Save</button>
+                </div>
+            </div>
+            <button class="btnLogout" type="button" title="Logout">LOGOUT</button>
+            <hr>
+            <div class="user-transaction-history">
+                <h3>Transaction History</h3>
+                <div id="user-transaction-list">
+                    
+                </div>
+            </div>
+            <hr>
+            <div class="danger-zone danger-div">
+                <h3 class="danger-zone">DANGER ZONE!</h3>
+            </div>
+            <button id="delete" type="button" title="Delete account">DELETE MY ACCOUNT</button>
+        </div>
+        
+        <!-- SCRIPT -->
+        <script src="script.js"></script>
+        <script src="access.js"></script>
+        <script src="myaccount.js"></script>
+    </body>
+</html>
