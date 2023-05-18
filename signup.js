@@ -77,9 +77,3 @@ $(document).ready(function() {
         return true;
     }
 });
-
-//
-
-//
-
-// Save to sessionStorage
