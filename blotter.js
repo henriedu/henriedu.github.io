@@ -296,4 +296,3 @@ $(document).ready(function() {
         updateBlotterDB();
     });
 });
-

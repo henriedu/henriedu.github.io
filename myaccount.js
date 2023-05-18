@@ -1,6 +1,5 @@
-// Transaction History
-
-
+// MYACCOUNT.JS - ables the user to edit their profile, see transaction history, and delete their account which would make the associated username completely unusable until localStorage is cleared
+// document ready
 $(document).ready(function() {
     let currentUser = whoIsLoggedIn(); // sets up who is currently logged in
     if (currentUser.lastname && currentUser.firstname) {
