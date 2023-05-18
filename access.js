@@ -240,15 +240,7 @@ $(document).ready(function() {
         window.location.href = `login.html`;
     });
     // create report transaction
-    $(document).on(`click`, `#gr-submit`, function() {
-        const transactingUserid  = Number(whoIsLoggedIn().userid);
-        const newTransaction = new transactionInstance();
-        newTransaction.datetime = createDateNowYMDHM();
-        newTransaction.type = `Blotter Report`;
-        newTransaction.details = `Generated a report (Report ID: ${padThisNum(blotterDatabase.length, 5)}).`;
-        newTransaction.userid = transactingUserid;
-        addTransaction(newTransaction);
-    });
+    // in the blotter.js - gr-submit button click
     // delete transaction
     $(document).on(`click`, `.report-delete`, function() {
         const transactingUserid  = Number($(this).parent().attr(`reportinguserid`));

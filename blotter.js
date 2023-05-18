@@ -109,6 +109,14 @@ $(document).ready(function() {
         newReport.reportDetails = reportDetails;
         newReport.reportID = blotterCurrentID;
         newReport.reportAddress = reportAddress;
+        // for transaction history
+        const transactingUserid  = Number(whoIsLoggedIn().userid);
+        const newTransaction = new transactionInstance();
+        newTransaction.datetime = createDateNowYMDHM();
+        newTransaction.type = `Blotter Report`;
+        newTransaction.details = `Generated a report (Report ID: ${padThisNum(blotterDatabase.length, 5)}).`;
+        newTransaction.userid = transactingUserid;
+        addTransaction(newTransaction);
         // update array and local storage
         addReportToDB(newReport); // adds that instance to array
         location.reload(); // reload the page
