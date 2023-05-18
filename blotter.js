@@ -7,7 +7,6 @@ if (getBlotterDB() != null && getBlotterDB().length > 0) {
 } else {
     blotterCurrentID = blotterDatabase.length + 1;
     updateBlotterDB();
-    blotterCurrentID = 1;
 }
 let thisUserBlotterDatabase = []; // array that is like blotterDatabase but only when its reporting user id matches to the currently logged in user id
 function updateCurrentUserBlotterDatabase() {
@@ -43,8 +42,7 @@ function addReportToDB(newReport) {
 function getBlotterDB() {
     let forRetrieval = localStorage.getItem(`blotterDatabase`);
     if (forRetrieval == null) {
-        const blankArray = [];
-        return blankArray;
+        return null;
     }
     return JSON.parse(localStorage.getItem(`blotterDatabase`));
 }
@@ -136,7 +134,7 @@ $(document).ready(function() {
         const newTransaction = new transactionInstance();
         newTransaction.datetime = createDateNowYMDHM();
         newTransaction.type = `Blotter Report`;
-        newTransaction.details = `Generated a report (Report ID: ${padThisNum(blotterCurrentID, 5)}).`;
+        newTransaction.details = `Generated a report (Report ID: ${padThisNum(newReport.reportID, 5)}).`;
         newTransaction.userid = transactingUserid;
         addTransaction(newTransaction);
 

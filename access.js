@@ -147,9 +147,9 @@ function redirectUser() {
 function usernameCheck(input) {
     const inputText = input.val().trim();
     const usersList = getUDb();
-    console.log(input);
-    console.log(inputText);
-    console.log(usersList);
+    if (usersList === null || usersList === undefined) {
+        return true;
+    }
     for (let i = 0; i < usersList.length; i++) {
         if (usersList[i].username == inputText && usersList[i].deleted === true) {
             alert(`This username can no longer be used.`);
