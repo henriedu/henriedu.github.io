@@ -62,7 +62,12 @@ function updateBlotterDB() {
     // reassigns the blotter database into the new blotterdatabase
     blotterDatabase = blotterDatabaseUndeleted;
     localStorage.setItem(`blotterDatabase`, JSON.stringify(blotterDatabase));
-    blotterCurrentID = getBlotterDB()[blotterDatabase.length - 1].reportID + 1;
+    let arrayDB = getBlotterDB();
+    if (arrayDB.length >= 1) {
+        blotterCurrentID = arrayDB[arrayDB.length - 1].reportID + 1;
+    } else {
+        blotterCurrentID = 1;        
+    }
 }
 // function that gets the class object instance that has a certain ID and returns that
 function getReportByID(thisID) {
@@ -293,3 +298,4 @@ $(document).ready(function() {
         updateBlotterDB();
     });
 });
+

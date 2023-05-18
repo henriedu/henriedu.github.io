@@ -16,6 +16,11 @@ let currentUserId = usersDatabase.length + 1;
 if (getUDb() !== null) {
     addUserIDInc();
 }
+if (getUDb() == null || getUDb().length <= 0) {
+    userLogin(null);
+    setLoggedIn(0);
+    window.location.href = `signup.html`;
+}
 
 class user {
     userid;
